@@ -1,6 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import NavMain from "./components/Nav/NavMain";
 import Home from "./pages/Home";
 import CarGalery from "./pages/CarGalery";
@@ -11,16 +9,18 @@ import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
 import PrivateRoute from "./components/ProtectedRoute/PrivateRoute";
 import LoggedOut from "./components/LoggedOut/LoggedOut";
+import CarDetails from "./pages/CarDetails";
 // import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <NavMain />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<CarGalery />} />
+        <Route path="/cars/:id" element={<CarDetails />} />
+
         <Route path="/rentcar" element={<RentYourCar />} />
         <Route element={<LoggedOut />}>
           <Route path="/signin" element={<Signin />} />
@@ -32,7 +32,6 @@ function App() {
           <Route path="/favorites" element={<Favorites />} />
         </Route>
       </Routes>
-      <Footer />
     </div>
   );
 }
