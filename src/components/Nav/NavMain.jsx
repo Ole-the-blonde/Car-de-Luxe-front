@@ -15,7 +15,7 @@ const NavMain = () => {
       {isLoggedIn && (
         <>
           <NavLink to="/profile">{currentUser && currentUser.email}</NavLink>
-          <NavLink to="/favorites">{currentUser && currentUser.email}</NavLink>
+          <NavLink to="/favorites">Favorites</NavLink>
           <button onClick={removeUser}>Log-Out</button>
         </>
       )}

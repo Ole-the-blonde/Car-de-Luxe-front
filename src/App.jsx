@@ -4,12 +4,13 @@ import Home from "./pages/Home";
 import CarGalery from "./pages/CarGalery";
 import RentYourCar from "./pages/RentYourCar";
 import Favorites from "./pages/Favorites";
-import Signin from "./pages/Signin";
-import Signup from "./pages/Signup";
+
 import Profile from "./pages/Profile";
 import PrivateRoute from "./components/ProtectedRoute/PrivateRoute";
 import LoggedOut from "./components/LoggedOut/LoggedOut";
 import CarDetails from "./pages/CarDetails";
+import FormSignUp from "./components/Forms/FormSignUp";
+import FormSignIn from "./components/Forms/FormSignIn";
 // import NotFound from "./pages/NotFound";
 
 function App() {
@@ -22,9 +23,10 @@ function App() {
         <Route path="/cars/:id" element={<CarDetails />} />
 
         <Route path="/rentcar" element={<RentYourCar />} />
+
         <Route element={<LoggedOut />}>
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<FormSignIn />} />
+          <Route path="/signup" element={<FormSignUp />} />
         </Route>
         <Route element={<PrivateRoute />}>
           {/* All routes after the PrivateRoute require the user to be loggedIn */}
