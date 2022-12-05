@@ -1,11 +1,25 @@
-import React from "react"
+import React from "react";
+import useAuth from "../auth/useAuth";
 
 const Profile = () => {
-	return (
-		<div>
-			<p>Welcome to your protected profile!</p>
-		</div>
-	)
-}
+  const { currentUser } = useAuth(); //get the information about the user that is logged in
 
-export default Profile
+  console.log("the current user", currentUser);
+
+  return (
+    <div>
+      <p>Welcome to your protected profile!</p>
+      {currentUser.isAdmin ? (
+        <div>
+          <h3>Hello , I'm the admin!</h3>
+        </div>
+      ) : (
+        <div>
+          <h3>Not the admin :( </h3>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Profile;

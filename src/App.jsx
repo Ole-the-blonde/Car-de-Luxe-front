@@ -11,6 +11,7 @@ import LoggedOut from "./components/LoggedOut/LoggedOut";
 import CarDetails from "./pages/CarDetails";
 import FormSignUp from "./components/Forms/FormSignUp";
 import FormSignIn from "./components/Forms/FormSignIn";
+import EditCar from "./pages/EditCar";
 // import NotFound from "./pages/NotFound";
 
 function App() {
@@ -33,6 +34,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/favorites" element={<Favorites />} />
         </Route>
+
+        <Route path="/car/:id/edit" element={<EditCar />}></Route>
       </Routes>
     </div>
   );

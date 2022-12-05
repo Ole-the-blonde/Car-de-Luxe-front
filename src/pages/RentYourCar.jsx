@@ -1,27 +1,33 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import service from "../api/apiHandler";
+// import cloudinary from "../../../server/config/cloudinary";
 
 const RentYourCar = (props) => {
   const [brand, setBrand] = useState("");
-  const [deposit, setdeposit] = useState("");
+  const [deposit, setDeposit] = useState("");
   const [price, setPrice] = useState("");
   const [maxSpeed, setMaxSpeed] = useState("");
   const [power, setPower] = useState("");
   const [description, setDescription] = useState("");
+  const [make, setMake] = useState("");
   const [formData, setFormData] = useState("");
 
-  // const [car, setCar] = useState({
-  //   brand: '',
-  //   deposit: '',
-  // })
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    // <== ADD
     e.preventDefault();
 
-    const requestBody = { title, description };
+    const requestBody = {
+      brand,
+      deposit,
+      price,
+      maxSpeed,
+      power,
+      description,
+      make,
+      /*   formData, */
+    };
 
     service
       .post("/api/rentcar", requestBody)
@@ -30,14 +36,6 @@ const RentYourCar = (props) => {
         //Do something with the response
       })
       .catch((e) => console.error(e));
-
-    // axios
-    //   .post(`${import.meta.env.VITE_BACKEND_URL}/api/rentcar`, requestBody)
-    //   .then((response) => {
-    //     setTitle("");
-    //     setDescription("");
-    //   })
-    //   .catch((error) => console.log(error));
   };
 
   return (
@@ -53,7 +51,6 @@ const RentYourCar = (props) => {
           id="brand"
           onChange={(e) => setBrand(e.target.value)}
         />
-
         <div>
           <label htmlFor="picture">Picture</label>
           <input
@@ -64,8 +61,7 @@ const RentYourCar = (props) => {
             onChange={setFormData}
           />
         </div>
-
-        <label htmlFor="deposit">deposit:</label>
+        <label htmlFor="deposit">Deposit</label>
         <input
           type="text"
           name="deposit"
@@ -88,6 +84,14 @@ const RentYourCar = (props) => {
           value={power}
           id="power"
           onChange={(e) => setPower(e.target.value)}
+        />{" "}
+        <label htmlFor="make">Make</label>
+        <input
+          type="text"
+          name="make"
+          value={make}
+          id="make"
+          onChange={(e) => setMake(e.target.value)}
         />
         <label htmlFor="maxSpeed">Max Speed:</label>
         <input
@@ -105,7 +109,6 @@ const RentYourCar = (props) => {
           id="description"
           onChange={(e) => setDescription(e.target.value)}
         />
-
         <button type="submit">Submit</button>
       </form>
     </div>

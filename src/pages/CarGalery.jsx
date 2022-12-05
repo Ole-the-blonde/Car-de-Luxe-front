@@ -2,18 +2,27 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import service from "../api/apiHandler";
+import useAuth from "../auth/useAuth";
 
 const CarGalery = () => {
+  const { currentUser, isLoading } = useAuth();
   const [cars, setCars] = useState([]);
   console.log(cars);
+  const fetchCars = async () => {
+    const { data } = await service.get("/api/cars");
+    setCars(data);
+  };
 
   useEffect(() => {
-    const fetchCars = async () => {
-      const { data } = await service.get("/api/cars");
-      setCars(data);
-    };
     fetchCars();
   }, []);
+
+  const deleteCar = async (id) => {
+    await service.delete(`/api/cars/${id}`);
+    await fetchCars();
+  };
+
+  if (isLoading) return <p>Loading....</p>;
 
   return (
     <div className="cars">
@@ -27,7 +36,16 @@ const CarGalery = () => {
             <div className="product-details">
               <p>{product.make}</p>
 
-              <button>Reserve</button>
+              {!currentUser?.isAdmin && <button>Reserve</button>}
+              {/* <pre>{JSON.stringify(currentUser, null, 2)}</pre> */}
+              {currentUser?.isAdmin && (
+                <>
+                  <button onClick={() => deleteCar(product._id)}>Delete</button>
+                  <Link to={`/car/${product._id}/edit`}>
+                    <button>Edit</button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         );
