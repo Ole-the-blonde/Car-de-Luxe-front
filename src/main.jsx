@@ -7,12 +7,12 @@ import "./styles/reset.css";
 import "./styles/global.css";
 
 ReactDOM.render(
-	<React.StrictMode>
-		<Router>
-			<UserProvider>
-				<App />
-			</UserProvider>
-		</Router>
-	</React.StrictMode>,
-	document.getElementById("root")
+  <React.StrictMode>
+    <Router>
+      <UserProvider>
+        <App />
+      </UserProvider>
+    </Router>
+  </React.StrictMode>,
+  document.getElementById("root")
 );

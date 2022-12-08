@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import service from "../api/apiHandler";
-// import cloudinary from "../../../server/config/cloudinary";
+import FileUpload from "./FileUpload";
 
 const RentYourCar = (props) => {
   const [brand, setBrand] = useState("");
@@ -9,9 +9,10 @@ const RentYourCar = (props) => {
   const [price, setPrice] = useState("");
   const [maxSpeed, setMaxSpeed] = useState("");
   const [power, setPower] = useState("");
+  const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
   const [make, setMake] = useState("");
-  const [formData, setFormData] = useState("");
+  const [transmission, setTransmission] = useState("");
 
   const navigate = useNavigate();
 
@@ -20,13 +21,14 @@ const RentYourCar = (props) => {
 
     const requestBody = {
       brand,
-      deposit,
-      price,
-      maxSpeed,
-      power,
-      description,
       make,
-      /*   formData, */
+      power,
+      image,
+      maxSpeed,
+      transmission,
+      price,
+      deposit,
+      description,
     };
 
     service
@@ -51,16 +53,16 @@ const RentYourCar = (props) => {
           id="brand"
           onChange={(e) => setBrand(e.target.value)}
         />
-        <div>
-          <label htmlFor="picture">Picture</label>
-          <input
-            type="file"
-            id="picture"
-            name="picture"
-            // value={picture.name || ""}
-            onChange={setFormData}
-          />
-        </div>
+        <label>Image:</label>
+        <FileUpload setImage={setImage} />
+        <label htmlFor="make">Make</label>
+        <input
+          type="text"
+          name="make"
+          value={make}
+          id="make"
+          onChange={(e) => setMake(e.target.value)}
+        />
         <label htmlFor="deposit">Deposit</label>
         <input
           type="text"
@@ -69,6 +71,20 @@ const RentYourCar = (props) => {
           id="deposit"
           onChange={(e) => setDeposit(e.target.value)}
         />
+
+        <label htmlFor="transmission">Transmission</label>
+        <select
+          name="transmission"
+          id="transmission"
+          onChange={(e) => {
+            setTransmission(e.target.value);
+          }}
+        >
+          <option value=""></option>
+          <option value="Automatic">Automatic</option>
+          <option value="Manual">Manual</option>
+        </select>
+
         <label htmlFor="price">Price:</label>
         <input
           type="text"
@@ -84,14 +100,6 @@ const RentYourCar = (props) => {
           value={power}
           id="power"
           onChange={(e) => setPower(e.target.value)}
-        />{" "}
-        <label htmlFor="make">Make</label>
-        <input
-          type="text"
-          name="make"
-          value={make}
-          id="make"
-          onChange={(e) => setMake(e.target.value)}
         />
         <label htmlFor="maxSpeed">Max Speed:</label>
         <input

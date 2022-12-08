@@ -16,7 +16,7 @@ const NavMain = () => {
         <>
           <NavLink to="/profile">{currentUser && currentUser.email}</NavLink>
 
-          <NavLink to="/favorites">Favorites</NavLink>
+          <NavLink to="/bookings">Bookings</NavLink>
           <button onClick={removeUser}>Log-Out</button>
         </>
       )}

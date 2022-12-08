@@ -8,14 +8,14 @@ const Profile = () => {
 
   return (
     <div>
-      <p>Welcome to your protected profile!</p>
+      <p>Welcome </p>
       {currentUser.isAdmin ? (
         <div>
           <h3>Hello , I'm the admin!</h3>
         </div>
       ) : (
         <div>
-          <h3>Not the admin :( </h3>
+          <h3>Not the admin </h3>
         </div>
       )}
     </div>

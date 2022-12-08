@@ -32,16 +32,6 @@ const EditCar = () => {
         id="brand"
         onChange={(e) => setCar({ ...car, [e.target.name]: e.target.value })}
       />
-      <div>
-        <label htmlFor="picture">Picture</label>
-        <input
-          type="file"
-          id="picture"
-          name="picture"
-          // value={picture.name || ""}
-          //   onChange={setFormData}
-        />
-      </div>
       <label htmlFor="deposit">Deposit</label>
       <input
         type="text"
