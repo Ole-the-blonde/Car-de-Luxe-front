@@ -6,26 +6,59 @@ const NavMain = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
   return (
     <nav className="NavMain">
-      <NavLink className="logo" to="/">
-        Car de Luxe
-      </NavLink>
-      <NavLink to="/cars">Car Galery</NavLink>
-      <NavLink to="/rentcar">Rent your Car</NavLink>
+      <div className="nav-wrapper">
+        <NavLink className="logo" to="/">
+          Car de Luxe
+        </NavLink>
 
-      {isLoggedIn && (
-        <>
-          <NavLink to="/profile">{currentUser && currentUser.email}</NavLink>
+        <ul>
+          <li>
+            <NavLink className="NavLinks" to="/cars">
+              Car Galery
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="NavLinks" to="/rentcar">
+              Rent your Car
+            </NavLink>
+          </li>
 
-          <NavLink to="/bookings">Bookings</NavLink>
-          <button onClick={removeUser}>Log-Out</button>
-        </>
-      )}
-      {!isLoggedIn && (
-        <>
-          <NavLink to="/signin">Log in</NavLink>
-          <NavLink to="/signup">Sign Up</NavLink>
-        </>
-      )}
+          {isLoggedIn && (
+            <>
+              <li>
+                <NavLink className="NavLinks" to="/profile">
+                  {currentUser && currentUser.email}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="NavLinks" to="/favorites">
+                  Favorites
+                </NavLink>
+              </li>
+              <li>
+                {" "}
+                <NavLink className="NavLinks" onClick={removeUser}>
+                  Log-Out
+                </NavLink>
+              </li>
+            </>
+          )}
+          {!isLoggedIn && (
+            <>
+              <li>
+                <NavLink className="NavLinks" to="/signin">
+                  Log in
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="NavLinks" to="/signup">
+                  Sign Up
+                </NavLink>
+              </li>
+            </>
+          )}
+        </ul>
+      </div>
     </nav>
   );
 };

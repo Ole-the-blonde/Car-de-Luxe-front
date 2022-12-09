@@ -1,0 +1,25 @@
+.addCar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid black;
+  margin: 2rem auto;
+  max-width: 400px;
+}
+
+.addCar form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addCar form input,
+.addCar form select {
+  width: 100%;
+}
+
+.addCar h2 {
+  padding: 1rem;
+}

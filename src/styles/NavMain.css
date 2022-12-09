@@ -1,0 +1,125 @@
+.NavMain {
+  background: rgb(8, 5, 24);
+  color: white;
+  /* position: fixed; */
+  top: 0;
+  height: 60px;
+  line-height: 60px;
+  width: 100%;
+  z-index: 10;
+}
+
+.nav-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: auto;
+  text-align: center;
+  width: 70%;
+}
+@media (max-width: 768px) {
+  .nav-wrapper {
+    width: 90%;
+  }
+}
+@media (max-width: 638px) {
+  .nav-wrapper {
+    width: 100%;
+  }
+}
+
+.logo {
+  float: left;
+  margin-left: 28px;
+  font-size: 1.5em;
+  height: 60px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  min-width: fit-content;
+}
+/* @media (max-width: 768px) {
+  .logo {
+    /*       margin-left: 5px; */
+
+.NavMain ul {
+  display: flex;
+  float: right;
+  list-style: none;
+  /* margin-right: 14px; */
+  margin-top: -2px;
+  text-align: right;
+  transition: transform 0.5s ease-out;
+  -webkit-transition: transform 0.5s ease-out;
+  flex-wrap: nowrap;
+}
+@media (max-width: 640px) {
+  .NavMain ul {
+    display: none;
+  }
+}
+/* @media (orientation: landscape) {
+  .NavMain ul {
+    display: inline-block;
+  }
+} */
+
+.NavMain li {
+  display: inline-block;
+  min-width: fit-content;
+}
+
+.NavMain li .NavLinks {
+  color: rgb(255, 255, 255);
+  display: block;
+  font-size: 0.7em;
+  height: 50px;
+  letter-spacing: 1px;
+  margin: 0 20px;
+  padding: 0 4px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.NavMain li .NavLinks:hover {
+  /* border-bottom: 1px solid rgb(28, 121, 184); */
+  color: rgb(28, 121, 184);
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+}
+
+/* Animated Bottom Line */
+.NavMain li .NavLinks:before,
+.NavMain li .NavLinks:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  bottom: -1px;
+  background: rgb(19, 130, 125);
+}
+
+.NavMain li .NavLinks:before {
+  left: 0;
+  transition: 0.5s;
+}
+
+.NavMain li .NavLinks:after {
+  background: whitesmoke;
+  right: 0;
+  /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
+}
+
+.NavMain li .NavLinks:hover:before {
+  background: whitesmoke;
+
+  width: 100%;
+  transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+}
+
+.NavMain li .NavLinks:hover:after {
+  background: transparent;
+  width: 100%;
+  /* transition: 0s; */
+}

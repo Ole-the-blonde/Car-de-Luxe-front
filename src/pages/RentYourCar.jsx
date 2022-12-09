@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import service from "../api/apiHandler";
 import FileUpload from "./FileUpload";
+import "../styles/addCar.css";
 
 const RentYourCar = (props) => {
   const [brand, setBrand] = useState("");
@@ -41,85 +42,87 @@ const RentYourCar = (props) => {
   };
 
   return (
-    <div className="AddCar">
-      <h3>Rent your Car</h3>
+    <section className="addCarContainer">
+      <div className="addCar">
+        <h2>Rent your Car</h2>
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="brand">Brand:</label>
-        <input
-          type="text"
-          name="brand"
-          value={brand}
-          id="brand"
-          onChange={(e) => setBrand(e.target.value)}
-        />
-        <label>Image:</label>
-        <FileUpload setImage={setImage} />
-        <label htmlFor="make">Make</label>
-        <input
-          type="text"
-          name="make"
-          value={make}
-          id="make"
-          onChange={(e) => setMake(e.target.value)}
-        />
-        <label htmlFor="deposit">Deposit</label>
-        <input
-          type="text"
-          name="deposit"
-          value={deposit}
-          id="deposit"
-          onChange={(e) => setDeposit(e.target.value)}
-        />
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="brand">Brand:</label>
+          <input
+            type="text"
+            name="brand"
+            value={brand}
+            id="brand"
+            onChange={(e) => setBrand(e.target.value)}
+          />
+          <label>Image:</label>
+          <FileUpload setImage={setImage} />
+          <label htmlFor="make">Make</label>
+          <input
+            type="text"
+            name="make"
+            value={make}
+            id="make"
+            onChange={(e) => setMake(e.target.value)}
+          />
+          <label htmlFor="deposit">Deposit</label>
+          <input
+            type="number"
+            name="deposit"
+            value={deposit}
+            id="deposit"
+            onChange={(e) => setDeposit(e.target.value)}
+          />
 
-        <label htmlFor="transmission">Transmission</label>
-        <select
-          name="transmission"
-          id="transmission"
-          onChange={(e) => {
-            setTransmission(e.target.value);
-          }}
-        >
-          <option value=""></option>
-          <option value="Automatic">Automatic</option>
-          <option value="Manual">Manual</option>
-        </select>
+          <label htmlFor="transmission">Transmission</label>
+          <select
+            name="transmission"
+            id="transmission"
+            onChange={(e) => {
+              setTransmission(e.target.value);
+            }}
+          >
+            <option value=""></option>
+            <option value="Automatic">Automatic</option>
+            <option value="Manual">Manual</option>
+          </select>
 
-        <label htmlFor="price">Price:</label>
-        <input
-          type="text"
-          name="price"
-          value={price}
-          id="price"
-          onChange={(e) => setPrice(e.target.value)}
-        />
-        <label htmlFor="power">Power</label>
-        <input
-          type="text"
-          name="power"
-          value={power}
-          id="power"
-          onChange={(e) => setPower(e.target.value)}
-        />
-        <label htmlFor="maxSpeed">Max Speed:</label>
-        <input
-          type="text"
-          name="maxSpeed"
-          value={maxSpeed}
-          id="maxSpeed"
-          onChange={(e) => setMaxSpeed(e.target.value)}
-        />
-        <label htmlFor="description">Description</label>
-        <input
-          type="text"
-          name="description"
-          value={description}
-          id="description"
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+          <label htmlFor="price">Price:</label>
+          <input
+            type="number"
+            name="price"
+            value={price}
+            id="price"
+            onChange={(e) => setPrice(e.target.value)}
+          />
+          <label htmlFor="power">Power</label>
+          <input
+            type="text"
+            name="power"
+            value={power}
+            id="power"
+            onChange={(e) => setPower(e.target.value)}
+          />
+          <label htmlFor="maxSpeed">Max Speed:</label>
+          <input
+            type="number"
+            name="maxSpeed"
+            value={maxSpeed}
+            id="maxSpeed"
+            onChange={(e) => setMaxSpeed(e.target.value)}
+          />
+          <label htmlFor="description">Description</label>
+          <input
+            type="text"
+            name="description"
+            value={description}
+            id="description"
+            onChange={(e) => setDescription(e.target.value)}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
   );
 };
 

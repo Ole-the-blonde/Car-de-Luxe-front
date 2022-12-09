@@ -1,0 +1,25 @@
+.cars {
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+
+.carsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+
+.carsList .product {
+  width: 30%;
+}
+
+.carsList .product img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.searchBar {
+  text-align: center;
+  padding: 1rem;
+}

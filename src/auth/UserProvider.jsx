@@ -25,7 +25,8 @@ const UserProvider = ({ children }) => {
       });
   };
 
-  const removeUser = async () => {
+  const removeUser = async (e) => {
+    e.preventDefault();
     removeToken();
     authenticateUser();
   };

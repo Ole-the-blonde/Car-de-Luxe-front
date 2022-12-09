@@ -16,7 +16,17 @@ const CarDetails = () => {
     fetchCar();
   }, []);
 
-  return <>{car && <h1>{car.brand}</h1>}</>;
+  return (
+    <>
+      {car && (
+        <div>
+          <h1>{car.make}</h1>
+          <img src={car.image} alt={car.make} />
+          <p></p>
+        </div>
+      )}
+    </>
+  );
 };
 
 export default CarDetails;

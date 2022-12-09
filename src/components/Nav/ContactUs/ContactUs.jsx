@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import popupStyles from "./ContactUs";
 import PropTypes from "prop-types";
+import "../../Nav/ContactUs/ContactUs.css";
 
 const CustomPopup = (props) => {
   const [show, setShow] = useState(false);
@@ -15,21 +16,23 @@ const CustomPopup = (props) => {
   }, [props.show]);
 
   return (
-    <div
-      style={{
-        visibility: show ? "visible" : "hidden",
-        opacity: show ? "1" : "0",
-      }}
-      className={popupStyles.overlay}
-    >
-      <div className={popupStyles.popup}>
-        <h2>{props.title}</h2>
-        <span className={popupStyles.close} onClick={closeHandler}>
-          &times;
-        </span>
-        <div className={popupStyles.content}>{props.children}</div>
+    <section className="popup-container">
+      <div
+        style={{
+          visibility: show ? "visible" : "hidden",
+          opacity: show ? "1" : "0",
+        }}
+        className="popup"
+      >
+        <div className={popupStyles.popup}>
+          <h2>{props.title}</h2>
+          <span className="close" onClick={closeHandler}>
+            &times;
+          </span>
+          <div className={popupStyles.content}>{props.children}</div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -3,7 +3,7 @@ import NavMain from "./components/Nav/NavMain";
 import Home from "./pages/Home";
 import CarGalery from "./pages/CarGalery";
 import RentYourCar from "./pages/RentYourCar";
-import Bookings from "./pages/Bookings";
+import Favorites from "./pages/Favorites";
 import Profile from "./pages/Profile";
 import PrivateRoute from "./components/ProtectedRoute/PrivateRoute";
 import LoggedOut from "./components/LoggedOut/LoggedOut";
@@ -31,7 +31,7 @@ function App() {
           {/* All routes after the PrivateRoute require the user to be loggedIn */}
           <Route path="/rentcar" element={<RentYourCar />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/bookings" element={<Bookings />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Route>
 
         <Route path="/car/:id/edit" element={<EditCar />}></Route>

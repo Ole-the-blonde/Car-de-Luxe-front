@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import service from "../api/apiHandler";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const EditCar = () => {
   const params = useParams();
   const [car, setCar] = useState(null);
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     service
       .patch(`/api/cars/${params.id}`, car)
       .then((res) => {
-        console.log(res.data);
+        navigate("/cars");
       })
       .catch((e) => console.log(e));
   };
