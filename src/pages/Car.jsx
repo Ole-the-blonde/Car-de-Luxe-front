@@ -29,7 +29,7 @@ const Car = (props) => {
 
         {!currentUser?.isAdmin && (
           <button onClick={() => reserveCar(product._id)}>
-            Make a reservation
+            Select your Favorite
           </button>
         )}
 

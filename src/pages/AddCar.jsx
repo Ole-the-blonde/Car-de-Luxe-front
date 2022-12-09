@@ -33,7 +33,7 @@ const RentYourCar = (props) => {
     };
 
     service
-      .post("/api/rentcar", requestBody)
+      .post("/api/addcar", requestBody)
       .then((response) => {
         navigate("/profile");
         //Do something with the response
@@ -44,7 +44,7 @@ const RentYourCar = (props) => {
   return (
     <section className="addCarContainer">
       <div className="addCar">
-        <h2>Rent your Car</h2>
+        <h2>Add a Car</h2>
 
         <form onSubmit={handleSubmit}>
           <label htmlFor="brand">Brand:</label>

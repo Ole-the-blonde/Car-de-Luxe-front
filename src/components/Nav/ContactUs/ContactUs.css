@@ -29,6 +29,9 @@
   border-radius: 5px;
   width: 70%;
   position: relative;
+}
+
+.popup-container {
   transition: all 1s ease-in-out;
 }
 

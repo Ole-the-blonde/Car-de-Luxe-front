@@ -16,14 +16,14 @@ const CustomPopup = (props) => {
   }, [props.show]);
 
   return (
-    <section className="popup-container">
-      <div
-        style={{
-          visibility: show ? "visible" : "hidden",
-          opacity: show ? "1" : "0",
-        }}
-        className="popup"
-      >
+    <section
+      className="popup-container"
+      style={{
+        visibility: show ? "visible" : "hidden",
+        opacity: show ? "1" : "0",
+      }}
+    >
+      <div className="popup">
         <div className={popupStyles.popup}>
           <h2>{props.title}</h2>
           <span className="close" onClick={closeHandler}>

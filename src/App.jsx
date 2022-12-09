@@ -2,7 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import NavMain from "./components/Nav/NavMain";
 import Home from "./pages/Home";
 import CarGalery from "./pages/CarGalery";
-import RentYourCar from "./pages/RentYourCar";
+import AddCar from "./pages/AddCar";
+
 import Favorites from "./pages/Favorites";
 import Profile from "./pages/Profile";
 import PrivateRoute from "./components/ProtectedRoute/PrivateRoute";
@@ -29,7 +30,7 @@ function App() {
         </Route>
         <Route element={<PrivateRoute />}>
           {/* All routes after the PrivateRoute require the user to be loggedIn */}
-          <Route path="/rentcar" element={<RentYourCar />} />
+          <Route path="/addcar" element={<AddCar />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/favorites" element={<Favorites />} />
         </Route>

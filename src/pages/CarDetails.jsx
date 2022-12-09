@@ -22,7 +22,8 @@ const CarDetails = () => {
         <div>
           <h1>{car.make}</h1>
           <img src={car.image} alt={car.make} />
-          <p></p>
+          <p>{car.price}</p>
+          <p>{car.transmission}</p>
         </div>
       )}
     </>

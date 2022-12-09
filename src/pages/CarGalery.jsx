@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import service from "../api/apiHandler";
 import useAuth from "../auth/useAuth";
 import Car from "./Car";

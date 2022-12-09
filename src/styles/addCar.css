@@ -23,3 +23,7 @@
 .addCar h2 {
   padding: 1rem;
 }
+
+section {
+  background-color: url("https://res.cloudinary.com/dz2sr4ri6/image/upload/v1670581895/Car%20De%20Luxe/bmw-m3-angel-eyes-black-background-5k-2560x2560-896_g1my26.jpg");
+}

@@ -1,6 +1,6 @@
 .NavMain {
-  background: rgb(8, 5, 24);
-  color: white;
+  background: black;
+  color: grey;
   /* position: fixed; */
   top: 0;
   height: 60px;
@@ -84,7 +84,7 @@
 
 .NavMain li .NavLinks:hover {
   /* border-bottom: 1px solid rgb(28, 121, 184); */
-  color: rgb(28, 121, 184);
+  color: grey;
   transition: all 1s ease;
   -webkit-transition: all 1s ease;
 }

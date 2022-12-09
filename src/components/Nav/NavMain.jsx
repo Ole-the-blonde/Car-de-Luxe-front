@@ -18,8 +18,8 @@ const NavMain = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="NavLinks" to="/rentcar">
-              Rent your Car
+            <NavLink className="NavLinks" to="/addcar">
+              Add a Car
             </NavLink>
           </li>
 
